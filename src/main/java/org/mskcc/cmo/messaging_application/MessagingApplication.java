@@ -22,7 +22,6 @@ public class MessagingApplication implements CommandLineRunner, MessageConsumer
     {
         try
         {
-            //messagingGateway.initialize("nats://dashi-dev.cbio.mskcc.org:4222");
             messagingGateway.subscribe("NEW_SAMPLE", SampleMetadata.class, this);
             SampleMetadata sm = new SampleMetadata();
             sm.sampleID = "sampleID here";
